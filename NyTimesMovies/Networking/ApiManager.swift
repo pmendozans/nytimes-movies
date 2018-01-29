@@ -9,6 +9,6 @@
 import Foundation
 
 struct ApiManager {
-    let baseUrl = ""
+    let baseUrl = "https://api.nytimes.com"
     let apiKey = "c99f7367293a404caf26c8b6b9425e3f"
 }
