@@ -28,9 +28,9 @@ struct MovieReview {
         byline = json["byline"].stringValue
         headline = json["headline"].stringValue
         summaryShort = json["summary_short"].stringValue
-        publicationDate = json["display_title"].stringValue
-        openingDate = json["display_title"].stringValue
-        dateUpdated = json["display_title"].stringValue
-        thumbnail = json["display_title"].stringValue
+        publicationDate = json["publication_date"].stringValue
+        openingDate = json["opening_date"].stringValue
+        dateUpdated = json["date_updated"].stringValue
+        thumbnail = json["link"]["url"].stringValue
     }
 }
