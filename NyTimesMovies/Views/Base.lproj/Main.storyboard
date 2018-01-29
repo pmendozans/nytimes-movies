@@ -66,6 +66,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="uTT-hw-M8x" kind="show" id="7lB-MR-3UM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-ID-cbw">
                                         <rect key="frame" x="40" y="205" width="295" height="40"/>
@@ -129,4 +132,7 @@
     <resources>
         <image name="ny-logo" width="374" height="483"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zb5-aI-MEn"/>
+    </inferredMetricsTieBreakers>
 </document>
