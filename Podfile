@@ -6,6 +6,7 @@ target 'NyTimesMovies' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
   # Pods for NyTimesMovies
 
   target 'NyTimesMoviesTests' do
