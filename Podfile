@@ -7,6 +7,7 @@ target 'NyTimesMovies' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'GoogleSignIn'
   # Pods for NyTimesMovies
 
   target 'NyTimesMoviesTests' do
