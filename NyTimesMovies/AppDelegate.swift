@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        IQKeyboardManager.sharedManager().enable = true
         GIDSignIn.sharedInstance().clientID = "62677563349-ct0tfo1471nqs5p6112bnns0r4qvvik5.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         return true
