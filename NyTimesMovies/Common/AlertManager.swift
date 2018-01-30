@@ -9,9 +9,11 @@
 import Foundation
 
 struct AlertManager {
+    
     enum ModalType{
         case notCompleteForm
         case invalidEmail
+        case serverError
     }
     
     func getModalAlert(modalType: ModalType) -> Modal{
@@ -24,6 +26,11 @@ struct AlertManager {
         case .invalidEmail:
             return Modal(title: NSLocalizedString("invalid-email-title", comment: ""),
                          message: NSLocalizedString("invalida-email-msg", comment: ""),
+                         closeLabel:  NSLocalizedString("accept", comment: ""))
+            
+        case .serverError:
+            return Modal(title: NSLocalizedString("server-error-title", comment: ""),
+                         message: NSLocalizedString("server-error-msg", comment: ""),
                          closeLabel:  NSLocalizedString("accept", comment: ""))
         }
     }
