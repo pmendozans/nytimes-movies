@@ -28,16 +28,16 @@ struct ReviewService {
     func getMovieReviews(byResourceType type: ResourceType, order: ReviewOrder, offset: Int, completion: ((JSON) -> Void)?, errorHandler: ((Error) -> Void)?){
         let validOffset = offset * 20
         let parameters = parameterSerializer.getMovieReviewsParameters(offset: validOffset, order: .publicationDate, resourceType: .all)
-        let url = "\(ApiManager().baseUrl)/svc/movies/v2/reviews/picks.json"
-        makeReviewRequest(url: url, parameters: parameters, completion: { jsonResponse in
+        let urlString = "\(ApiManager().baseUrl)/svc/movies/v2/reviews/picks.json"
+        makeReviewRequest(urlString: urlString, parameters: parameters, completion: { jsonResponse in
             completion?(jsonResponse)
         }, errorHandler: { error in
             errorHandler?(error)
         })
     }
     
-    private func makeReviewRequest(url: String, parameters: Parameters, completion: ((JSON) -> Void)?, errorHandler: ((NSError) -> Void)?){
-        guard let url = URL(string: url) else{
+    private func makeReviewRequest(urlString: String, parameters: Parameters, completion: ((JSON) -> Void)?, errorHandler: ((NSError) -> Void)?){
+        guard let url = URL(string: urlString) else{
             return
         }
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
