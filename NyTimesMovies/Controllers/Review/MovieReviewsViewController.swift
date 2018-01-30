@@ -18,6 +18,7 @@ class MovieReviewsViewController: UIViewController {
     private let cellIdentifier = "ReviewCell"
     private let cellNibName = "MovieReviewCell"
     private let reviewViewModel = ReviewViewModel()
+    private let alertManager = AlertManager()
     private let reviewListToDetails = "reviewListToDetails"
     private var currentPage = 0
     private var hasLoadedAllReviews = false
@@ -33,10 +34,14 @@ class MovieReviewsViewController: UIViewController {
         activityIndicator.startAnimating()
         reviewViewModel.getMovieReviews(offset: currentPage, completion: { movieReviews in
             self.currentPage += 1
-            self.activityIndicator.stopAnimating()
+            if(movieReviews.count == 0){
+                self.hasLoadedAllReviews = true
+            }
             self.movieReviewsList.append(contentsOf: movieReviews)
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
         }, errorHandler: { _ in
+            self.openAlertAction(modal: self.alertManager.getModalAlert(modalType: .serverError), completion: nil)
             self.activityIndicator.stopAnimating()
         })
     }
@@ -73,8 +78,10 @@ extension MovieReviewsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == movieReviewsList.count-2 { //you might decide to load sooner than -1 I guess...
-            loadMovieReviewsFromApi()
+        if indexPath.row == movieReviewsList.count-2 {
+            if (!hasLoadedAllReviews) {
+                loadMovieReviewsFromApi()
+            }
         }
     }
 }
