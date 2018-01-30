@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTf: UITextField!
     @IBOutlet weak var loginWithEmailBtn: UIButton!
     @IBOutlet weak var loginWithGoogleBtn: UIButton!
+    let loginManager = LoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class LoginViewController: UIViewController {
         
     }
     
+    func validateFields(){
+        
+    }
     
     @IBAction func loginWithGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
