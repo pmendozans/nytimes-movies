@@ -20,14 +20,18 @@ PODS:
   - GTMSessionFetcher/Core (1.1.13)
   - GTMSessionFetcher/Full (1.1.13):
     - GTMSessionFetcher/Core (= 1.1.13)
+  - IQKeyboardManagerSwift (5.0.7)
   - Kingfisher (4.6.1)
   - SwiftyJSON (4.0.0)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleSignIn
+  - IQKeyboardManagerSwift
   - Kingfisher
   - SwiftyJSON
+  - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -35,9 +39,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: ea23adcee33d3cb32382444529b01ba1f26c59bc
+PODFILE CHECKSUM: c5672948806c11a6aa1803560e32d3f8b180ea28
 
 COCOAPODS: 1.4.0
