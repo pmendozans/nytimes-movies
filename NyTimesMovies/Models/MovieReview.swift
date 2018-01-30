@@ -10,16 +10,16 @@ import Foundation
 import SwiftyJSON
 
 struct MovieReview {
-    var displayTitle: String?
-    var mppaRating: String?
-    var criticsPick: String?
-    var byline: String?
-    var headline: String?
-    var summaryShort: String?
-    var publicationDate: String?
-    var openingDate: String?
-    var dateUpdated: String?
-    var thumbnail: String
+    var displayTitle: String
+    var mppaRating: String
+    var criticsPick: String
+    var byline: String
+    var headline: String
+    var summaryShort: String
+    var publicationDate: String
+    var openingDate: String
+    var dateUpdated: String
+    var thumbnail: String?
     
     init(json: JSON){
         displayTitle = json["display_title"].stringValue
@@ -31,6 +31,6 @@ struct MovieReview {
         publicationDate = json["publication_date"].stringValue
         openingDate = json["opening_date"].stringValue
         dateUpdated = json["date_updated"].stringValue
-        thumbnail = json["link"]["url"].stringValue
+        thumbnail = json["multimedia"]["src"].string
     }
 }
