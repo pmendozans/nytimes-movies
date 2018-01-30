@@ -12,6 +12,7 @@ class MovieReviewsViewController: UIViewController {
     
     @IBOutlet weak var profileBtn: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var movieReviewsList: [MovieReview] = []
     private let cellIdentifier = "ReviewCell"
@@ -19,6 +20,7 @@ class MovieReviewsViewController: UIViewController {
     private let reviewViewModel = ReviewViewModel()
     private let reviewListToDetails = "reviewListToDetails"
     private var currentPage = 0
+    private var hasLoadedAllReviews = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +30,14 @@ class MovieReviewsViewController: UIViewController {
     }
     
     func loadMovieReviewsFromApi(){
-        reviewViewModel.getMovieReviews(offset: 0, completion: { movieReviews in
-            self.movieReviewsList = movieReviews
+        activityIndicator.startAnimating()
+        reviewViewModel.getMovieReviews(offset: currentPage, completion: { movieReviews in
+            self.currentPage += 1
+            self.activityIndicator.stopAnimating()
+            self.movieReviewsList.append(contentsOf: movieReviews)
             self.tableView.reloadData()
         }, errorHandler: { _ in
-            
+            self.activityIndicator.stopAnimating()
         })
     }
     
@@ -69,7 +74,7 @@ extension MovieReviewsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == movieReviewsList.count-2 { //you might decide to load sooner than -1 I guess...
-            print("Reached end")
+            loadMovieReviewsFromApi()
         }
     }
 }

@@ -74,6 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="gr5-Zt-ufb" id="DwJ-Ma-bMz"/>
                         <outlet property="profileBtn" destination="EqN-dc-5u0" id="5Sj-WA-HkR"/>
                         <outlet property="tableView" destination="Skp-N0-C00" id="bIf-cn-8kD"/>
                         <segue destination="5Tf-9I-5QS" kind="show" identifier="reviewListToDetails" id="9K4-1f-HcN"/>
