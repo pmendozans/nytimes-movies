@@ -36,23 +36,26 @@ struct ReviewService {
         })
     }
     
-    private func makeReviewRequest(url: String, parameters: Parameters, completion: ((JSON) -> Void)?, errorHandler: ((Error) -> Void)?){
+    private func makeReviewRequest(url: String, parameters: Parameters, completion: ((JSON) -> Void)?, errorHandler: ((NSError) -> Void)?){
         guard let url = URL(string: url) else{
             return
         }
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
             case.success(let value):
-                
+                let genericError = NSError(domain: "", code: 0, userInfo: nil)
                 guard let statusCode = response.response?.statusCode else {
+                    errorHandler?(genericError)
                     return
                 }
                 switch statusCode {
                 case 200:
                     guard let rawJson = value as? [String: Any] else {
+                        errorHandler?(genericError)
                         return
                     }
                     guard let resultsJson = rawJson["results"] as? [[String: Any]] else {
+                        errorHandler?(genericError)
                         return
                     }
                     completion?(JSON(resultsJson))
@@ -61,7 +64,7 @@ struct ReviewService {
                 }
                 
             case .failure(let error):
-                errorHandler?(error)
+                errorHandler?(error as NSError)
             }
         }
     }
