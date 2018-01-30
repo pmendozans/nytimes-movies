@@ -39,7 +39,8 @@ class MovieReviewsViewController: UIViewController {
         let identifier = segue.identifier
         if identifier == ControllerSegue.reviewListToDetails.rawValue {
             let viewController = segue.destination as! MovieDetailsViewController
-            
+            let selectedIndex = sender as! Int
+            viewController.movieReviewDetails = movieReviewsList[selectedIndex]
         }
         
     }

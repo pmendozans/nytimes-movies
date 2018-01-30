@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="69C-pP-7KD">
             <objects>
-                <viewController id="00x-Dd-3NR" sceneMemberID="viewController">
+                <viewController id="00x-Dd-3NR" customClass="LoginViewController" customModule="NyTimesMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C14-OG-fAj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,23 +39,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M83-eI-JNx">
                                 <rect key="frame" x="0.0" y="354.5" width="375" height="312.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Fq-pO-BN2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Fq-pO-BN2">
                                         <rect key="frame" x="40" y="96.5" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Fb3-wz-20u"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T7q-BA-jo4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T7q-BA-jo4">
                                         <rect key="frame" x="40" y="48" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8Ha-s9-iTF"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BQ-M0-aYF">
                                         <rect key="frame" x="40" y="144.5" width="295" height="40"/>
@@ -67,6 +67,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="loginWithEmail:" destination="00x-Dd-3NR" eventType="touchUpInside" id="f1S-DX-AJm"/>
                                             <segue destination="uTT-hw-M8x" kind="show" id="7lB-MR-3UM"/>
                                         </connections>
                                     </button>
@@ -79,6 +80,9 @@
                                         <state key="normal" title="Login With Google">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginWithGoogle:" destination="00x-Dd-3NR" eventType="touchUpInside" id="wfh-OQ-2JZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,6 +117,10 @@
                         <viewLayoutGuide key="safeArea" id="6ii-KN-PCh"/>
                     </view>
                     <connections>
+                        <outlet property="emailTf" destination="T7q-BA-jo4" id="RUB-em-p60"/>
+                        <outlet property="loginWithEmailBtn" destination="7BQ-M0-aYF" id="XL9-LL-dbC"/>
+                        <outlet property="loginWithGoogleBtn" destination="Gqc-ID-cbw" id="cQL-3q-cxi"/>
+                        <outlet property="passwordTf" destination="9Fq-pO-BN2" id="hNu-SR-uvY"/>
                         <segue destination="uTT-hw-M8x" kind="show" id="zb5-aI-MEn"/>
                     </connections>
                 </viewController>
