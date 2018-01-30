@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     }
     
     func validateLogin(){
-        let isLoged = Defaults[.isLoged]
+        let isLoged = Defaults[.isLogged]
         if (isLoged) {
             performSegue(withIdentifier: loginSegue, sender: nil)
         }

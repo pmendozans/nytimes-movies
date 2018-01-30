@@ -18,7 +18,7 @@ struct LoginManager {
     
     func login(withEmail email: String, password: String, completion: LoginCompletionHandler, errorHandler: LoginErrorHandler){
         if email == "test@nearsoft.com" && password == "demo" {
-            Defaults[.isLoged] = true
+            Defaults[.isLogged] = true
             completion?()
         }
         else {
@@ -28,12 +28,12 @@ struct LoginManager {
     
     func login(withGoogleUser user: GIDGoogleUser, completion: LoginCompletionHandler){
         Defaults[.email] = user.profile.email
-        Defaults[.isLoged] = true
+        Defaults[.isLogged] = true
         completion?()
     }
     
     func logout(currentController: UIViewController){
-        Defaults[.isLoged] = false
+        Defaults[.isLogged] = false
         GIDSignIn.sharedInstance().signOut()
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
