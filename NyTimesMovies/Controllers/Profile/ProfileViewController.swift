@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailLbl: UILabel!
+    private let loginManager = LoginManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailLbl.text = Defaults[.email]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func logout(_ sender: Any) {
+        loginManager.logout(currentController: self)
     }
+    
 }
