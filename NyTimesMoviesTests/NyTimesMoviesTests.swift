@@ -11,15 +11,15 @@ import XCTest
 
 class NyTimesMoviesTests: XCTestCase {
     
-    func passwordIsValid() {
+    func testPasswordIsValid() {
         let formValidator = FormValidator()
-        let validPassword = "pmendoza@nearsoft.com"
+        let validPassword = "pmendoza@ns.com"
         let isEmailValid = formValidator.validateEmail(validPassword)
         XCTAssertTrue(isEmailValid)
         
     }
     
-    func passwordIsInvalid(){
+    func testPasswordIsInvalid(){
         let formValidator = FormValidator()
         let validPassword = "pmendoza@nearsoft"
         let isEmailValid = formValidator.validateEmail(validPassword)
