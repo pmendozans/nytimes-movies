@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EB1FA20202029AF003BD4AD /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA1F202029AF003BD4AD /* FormValidator.swift */; };
+		6EB1FA222020309D003BD4AD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA212020309D003BD4AD /* AlertManager.swift */; };
+		6EB1FA24202030EC003BD4AD /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA23202030EC003BD4AD /* Modal.swift */; };
+		6EB1FA2820203210003BD4AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1FA2720203210003BD4AD /* Localizable.strings */; };
+		6EB1FA2B2020337D003BD4AD /* UIViewControlleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA2A2020337D003BD4AD /* UIViewControlleExtension.swift */; };
+		6EB1FA2D202044D8003BD4AD /* DefaultsKeysExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA2C202044D8003BD4AD /* DefaultsKeysExtension.swift */; };
+		6EB1FA2F202049DA003BD4AD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1FA2E202049DA003BD4AD /* UIViewExtension.swift */; };
 		72B25038201F90370058DA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B25037201F90370058DA8C /* AppDelegate.swift */; };
 		72B2503A201F90370058DA8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B25039201F90370058DA8C /* ViewController.swift */; };
 		72B2503D201F90370058DA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B2503B201F90370058DA8C /* Main.storyboard */; };
@@ -54,6 +61,13 @@
 /* Begin PBXFileReference section */
 		34FDF23653DD7862B05C437E /* Pods-NyTimesMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMovies/Pods-NyTimesMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		495D7B83161A9A6216A20060 /* Pods-NyTimesMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMovies/Pods-NyTimesMovies.release.xcconfig"; sourceTree = "<group>"; };
+		6EB1FA1F202029AF003BD4AD /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		6EB1FA212020309D003BD4AD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		6EB1FA23202030EC003BD4AD /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		6EB1FA2720203210003BD4AD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6EB1FA2A2020337D003BD4AD /* UIViewControlleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControlleExtension.swift; sourceTree = "<group>"; };
+		6EB1FA2C202044D8003BD4AD /* DefaultsKeysExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeysExtension.swift; sourceTree = "<group>"; };
+		6EB1FA2E202049DA003BD4AD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		6F2EE78B3663106BAAD5DBE0 /* Pods_NyTimesMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NyTimesMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B25034201F90370058DA8C /* NyTimesMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyTimesMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B25037201F90370058DA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +147,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6EB1FA26202031E4003BD4AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72B2503E201F90370058DA8C /* Assets.xcassets */,
+				6EB1FA2720203210003BD4AD /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EB1FA2920203349003BD4AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6EB1FA2A2020337D003BD4AD /* UIViewControlleExtension.swift */,
+				6EB1FA2C202044D8003BD4AD /* DefaultsKeysExtension.swift */,
+				6EB1FA2E202049DA003BD4AD /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		72B2502B201F90370058DA8C = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +191,7 @@
 		72B25036201F90370058DA8C /* NyTimesMovies */ = {
 			isa = PBXGroup;
 			children = (
+				6EB1FA26202031E4003BD4AD /* Resources */,
 				72B25072201F9D7B0058DA8C /* Networking */,
 				72B25069201F92CA0058DA8C /* Common */,
 				72B25068201F92C10058DA8C /* ViewModels */,
@@ -166,7 +200,6 @@
 				72B25065201F92850058DA8C /* Models */,
 				72B25037201F90370058DA8C /* AppDelegate.swift */,
 				72B25039201F90370058DA8C /* ViewController.swift */,
-				72B2503E201F90370058DA8C /* Assets.xcassets */,
 				72B25043201F90370058DA8C /* Info.plist */,
 				72B2508E201FEF2E0058DA8C /* GoogleService-Info.plist */,
 				72B2508D201FE2070058DA8C /* Reviews-Bridging-Header.h */,
@@ -196,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				72B25078201FB3CC0058DA8C /* MovieReview.swift */,
+				6EB1FA23202030EC003BD4AD /* Modal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,8 +268,11 @@
 		72B25069201F92CA0058DA8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6EB1FA2920203349003BD4AD /* Extensions */,
 				72B2507C201FBACE0058DA8C /* ParametersSerializer.swift */,
 				72B25090201FF5110058DA8C /* LoginManager.swift */,
+				6EB1FA1F202029AF003BD4AD /* FormValidator.swift */,
+				6EB1FA212020309D003BD4AD /* AlertManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -429,6 +466,7 @@
 				72B2506F201F9C170058DA8C /* Review.storyboard in Resources */,
 				72B2503F201F90370058DA8C /* Assets.xcassets in Resources */,
 				72B2506D201F96810058DA8C /* MovieReviewCell.xib in Resources */,
+				6EB1FA2820203210003BD4AD /* Localizable.strings in Resources */,
 				72B2503D201F90370058DA8C /* Main.storyboard in Resources */,
 				72B2508F201FEF2E0058DA8C /* GoogleService-Info.plist in Resources */,
 			);
@@ -495,8 +533,10 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -504,8 +544,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -618,7 +660,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB1FA2B2020337D003BD4AD /* UIViewControlleExtension.swift in Sources */,
+				6EB1FA20202029AF003BD4AD /* FormValidator.swift in Sources */,
 				72B2503A201F90370058DA8C /* ViewController.swift in Sources */,
+				6EB1FA222020309D003BD4AD /* AlertManager.swift in Sources */,
+				6EB1FA24202030EC003BD4AD /* Modal.swift in Sources */,
 				72B25079201FB3CC0058DA8C /* MovieReview.swift in Sources */,
 				72B25084201FC5D00058DA8C /* MovieDetailsViewController.swift in Sources */,
 				72B2507D201FBACE0058DA8C /* ParametersSerializer.swift in Sources */,
@@ -626,6 +672,8 @@
 				72B25091201FF5110058DA8C /* LoginManager.swift in Sources */,
 				72B25074201F9DB20058DA8C /* ApiManager.swift in Sources */,
 				72B2508A201FC61B0058DA8C /* ProfileViewController.swift in Sources */,
+				6EB1FA2D202044D8003BD4AD /* DefaultsKeysExtension.swift in Sources */,
+				6EB1FA2F202049DA003BD4AD /* UIViewExtension.swift in Sources */,
 				72B25086201FC5FB0058DA8C /* MoviewReviewCell.swift in Sources */,
 				72B2507B201FB6400058DA8C /* ReviewViewModel.swift in Sources */,
 				72B25082201FC5AE0058DA8C /* MovieReviewsViewController.swift in Sources */,
