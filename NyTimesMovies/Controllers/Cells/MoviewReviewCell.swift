@@ -14,15 +14,7 @@ class MoviewReviewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var reviewTxt: UITextView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
+        
     func loadReviewPreview(movieReview: MovieReview){
         titleLbl.text = movieReview.displayTitle
         reviewTxt.text = movieReview.summaryShort

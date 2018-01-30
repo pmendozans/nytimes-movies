@@ -26,7 +26,8 @@ struct ReviewService {
     private let parameterSerializer = ParametersSerializer()
     
     func getMovieReviews(byResourceType type: ResourceType, order: ReviewOrder, offset: Int, completion: ((JSON) -> Void)?, errorHandler: ((Error) -> Void)?){
-        let parameters = parameterSerializer.getMovieReviewsParameters(offset: 0, order: .publicationDate, resourceType: .all)
+        let validOffset = offset * 20
+        let parameters = parameterSerializer.getMovieReviewsParameters(offset: validOffset, order: .publicationDate, resourceType: .all)
         let url = "\(ApiManager().baseUrl)/svc/movies/v2/reviews/picks.json"
         makeReviewRequest(url: url, parameters: parameters, completion: { jsonResponse in
             completion?(jsonResponse)
@@ -42,7 +43,7 @@ struct ReviewService {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
             case.success(let value):
-                print(value)
+                
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -51,14 +52,15 @@ struct ReviewService {
                     guard let rawJson = value as? [String: Any] else {
                         return
                     }
-                    let json = JSON(rawJson)
-                    completion?(json["results"])
+                    guard let resultsJson = rawJson["results"] as? [[String: Any]] else {
+                        return
+                    }
+                    completion?(JSON(resultsJson))
                 default:
                     print("Error in response")
                 }
                 
             case .failure(let error):
-                print("Error")
                 errorHandler?(error)
             }
         }
