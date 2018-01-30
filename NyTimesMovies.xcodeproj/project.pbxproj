@@ -35,6 +35,7 @@
 		72B2508A201FC61B0058DA8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B25089201FC61B0058DA8C /* ProfileViewController.swift */; };
 		72B2508F201FEF2E0058DA8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72B2508E201FEF2E0058DA8C /* GoogleService-Info.plist */; };
 		72B25091201FF5110058DA8C /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B25090201FF5110058DA8C /* LoginManager.swift */; };
+		72B25093202121B50058DA8C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B25092202121B50058DA8C /* CustomError.swift */; };
 		ACB8B0A02A1A2085C2A58CDA /* Pods_NyTimesMoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B731EAF47645372F2887EAC7 /* Pods_NyTimesMoviesUITests.framework */; };
 		D5A722251B38C22BDDF02DD8 /* Pods_NyTimesMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2EE78B3663106BAAD5DBE0 /* Pods_NyTimesMovies.framework */; };
 		F0EFFF6A6A21303FEE3A14F7 /* Pods_NyTimesMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE5901DD7D3ADEF40C3968D /* Pods_NyTimesMoviesTests.framework */; };
@@ -96,6 +97,7 @@
 		72B2508D201FE2070058DA8C /* Reviews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reviews-Bridging-Header.h"; sourceTree = "<group>"; };
 		72B2508E201FEF2E0058DA8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72B25090201FF5110058DA8C /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		72B25092202121B50058DA8C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		787FF486358F57563535AADC /* Pods-NyTimesMoviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMoviesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMoviesUITests/Pods-NyTimesMoviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE5901DD7D3ADEF40C3968D /* Pods_NyTimesMoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NyTimesMoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73D42F60078BC987BF50A7E /* Pods-NyTimesMoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMoviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMoviesTests/Pods-NyTimesMoviesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				72B25090201FF5110058DA8C /* LoginManager.swift */,
 				6EB1FA1F202029AF003BD4AD /* FormValidator.swift */,
 				6EB1FA212020309D003BD4AD /* AlertManager.swift */,
+				72B25092202121B50058DA8C /* CustomError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				72B25079201FB3CC0058DA8C /* MovieReview.swift in Sources */,
 				72B25084201FC5D00058DA8C /* MovieDetailsViewController.swift in Sources */,
 				72B2507D201FBACE0058DA8C /* ParametersSerializer.swift in Sources */,
+				72B25093202121B50058DA8C /* CustomError.swift in Sources */,
 				72B25077201F9DD10058DA8C /* ReviewService.swift in Sources */,
 				72B25091201FF5110058DA8C /* LoginManager.swift in Sources */,
 				72B25074201F9DB20058DA8C /* ApiManager.swift in Sources */,
