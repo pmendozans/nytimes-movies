@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  NyTimesMovies
+
+  Created by Pablo Arturo Ruiz Mendoza on 1/29/18.
+  Copyright © 2018 nearsoft. All rights reserved.
+*/
+
+"incomplete-form" = "Incomplete Form";
+"fill-the-form" = "Fill all the form so you can continue";
+"accept" = "Accept";
+"invalid-email-title" = "Invalid Email";
+"invalida-email-msg" = "Please enter a valid email";
+
