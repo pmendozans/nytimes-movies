@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginWithEmail(_ sender: Any) {
         if (!formValidator.validateRequired(textFields: requiredFields)) {
             openAlertAction(modal: alertManager.getModalAlert(modalType: .notCompleteForm), completion: nil)
-        } else if (!formValidator.validateEmail(emailTextField.text!)){
+        } else if (!emailTextField.text!.isValidEmail()){
             openAlertAction(modal: alertManager.getModalAlert(modalType: .invalidEmail), completion: nil)
         } else {
             loginManager.login(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {
