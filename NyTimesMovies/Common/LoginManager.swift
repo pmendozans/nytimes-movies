@@ -11,14 +11,15 @@ import Foundation
 import GoogleSignIn
 import SwiftyUserDefaults
 
-typealias LoginCompletionHandler = (() -> Void )?
-typealias LoginErrorHandler = ((String) -> Void )?
+typealias CompletionHandler = (() -> Void )?
+typealias ErrorHandler = ((String) -> Void )?
 
 struct LoginManager {
     
-    func login(withEmail email: String, password: String, completion: LoginCompletionHandler, errorHandler: LoginErrorHandler){
+    func login(withEmail email: String, password: String, completion: CompletionHandler, errorHandler: ErrorHandler){
         if email == "test@nearsoft.com" && password == "demo" {
             Defaults[.isLogged] = true
+            Defaults[.email] = email
             completion?()
         }
         else {
@@ -26,7 +27,7 @@ struct LoginManager {
         }
     }
     
-    func login(withGoogleUser user: GIDGoogleUser, completion: LoginCompletionHandler){
+    func login(withGoogleUser user: GIDGoogleUser, completion: CompletionHandler){
         Defaults[.email] = user.profile.email
         Defaults[.isLogged] = true
         completion?()
