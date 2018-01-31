@@ -43,7 +43,7 @@ struct ReviewService {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
             case.success(let value):
-                let genericError = NSError(domain: "", code: 0, userInfo: nil)
+                let genericError = CustomError(message: "Server Error").createCustomError()
                 guard let statusCode = response.response?.statusCode else {
                     errorHandler?(genericError)
                     return
@@ -60,7 +60,7 @@ struct ReviewService {
                     }
                     completion?(JSON(resultsJson))
                 default:
-                    print("Error in response")
+                    errorHandler?(genericError)
                 }
                 
             case .failure(let error):

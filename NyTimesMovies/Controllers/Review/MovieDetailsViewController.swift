@@ -11,15 +11,18 @@ import UIKit
 class MovieDetailsViewController: UIViewController {
     
     
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var ratingLbl: UILabel!
-    @IBOutlet weak var criticsPickLbl: UILabel!
-    @IBOutlet weak var directorLbl: UILabel!
-    @IBOutlet weak var publicationDateLbl: UILabel!
-    @IBOutlet weak var openingDateLbl: UILabel!
-    @IBOutlet weak var summaryTxt: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var directorLabel: UILabel!
+    @IBOutlet weak var publicationDateLabel: UILabel!
+    @IBOutlet weak var openingDateLabel: UILabel!
+    @IBOutlet weak var summaryTextView: UITextView!
+    @IBOutlet weak var thumbImage: UIImageView!
+    
     
     var movieReviewDetails: MovieReview!
+    private let thumbsUpImageName = "thumbs-up"
+    private let dateManager = DateManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +30,14 @@ class MovieDetailsViewController: UIViewController {
     }
     
     func loadDetailsData(){
-        titleLbl.text = movieReviewDetails.displayTitle
-        ratingLbl.text = movieReviewDetails.mppaRating
-        criticsPickLbl.text = movieReviewDetails.criticsPick
-        directorLbl.text = movieReviewDetails.byline
-        summaryTxt.text = movieReviewDetails.summaryShort
-        publicationDateLbl.text = movieReviewDetails.publicationDate
-        openingDateLbl.text = movieReviewDetails.openingDate
+        titleLabel.text = movieReviewDetails.displayTitle
+        ratingLabel.text = movieReviewDetails.mppaRating
+        directorLabel.text = movieReviewDetails.byline
+        summaryTextView.text = movieReviewDetails.summaryShort
+        publicationDateLabel.text = dateManager.readableDate(fromString: movieReviewDetails.publicationDate)
+        openingDateLabel.text = dateManager.readableDate(fromString: movieReviewDetails.openingDate)
+        if (movieReviewDetails.criticsPick) {
+            thumbImage.image = UIImage(named: thumbsUpImageName)
+        }
     }
 }

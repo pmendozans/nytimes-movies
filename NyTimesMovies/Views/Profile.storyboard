@@ -91,7 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="PROFILE" id="4s6-Zs-b8P"/>
                     <connections>
-                        <outlet property="emailLbl" destination="ceq-Ri-32f" id="0ou-1z-to0"/>
+                        <outlet property="emailLabel" destination="ceq-Ri-32f" id="0ou-1z-to0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmC-h9-IiA" userLabel="First Responder" sceneMemberID="firstResponder"/>

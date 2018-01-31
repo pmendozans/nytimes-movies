@@ -12,7 +12,7 @@ import SwiftyJSON
 struct MovieReview {
     var displayTitle: String
     var mppaRating: String
-    var criticsPick: String
+    var criticsPick: Bool
     var byline: String
     var headline: String
     var summaryShort: String
@@ -24,7 +24,7 @@ struct MovieReview {
     init(json: JSON){
         displayTitle = json["display_title"].stringValue
         mppaRating = json["mpaa_rating"].stringValue
-        criticsPick = json["critics_pick"].stringValue
+        criticsPick = json["critics_pick"].boolValue
         byline = json["byline"].stringValue
         headline = json["headline"].stringValue
         summaryShort = json["summary_short"].stringValue

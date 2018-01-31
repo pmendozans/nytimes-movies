@@ -11,13 +11,13 @@ import SwiftyUserDefaults
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     private let loginManager = LoginManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailLbl.text = Defaults[.email]
+        emailLabel.text = Defaults[.email]
     }
 
     @IBAction func logout(_ sender: Any) {

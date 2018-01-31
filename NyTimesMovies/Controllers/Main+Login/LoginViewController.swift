@@ -12,10 +12,10 @@ import SwiftyUserDefaults
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailTf: UITextField!
-    @IBOutlet weak var passwordTf: UITextField!
-    @IBOutlet weak var loginWithEmailBtn: UIButton!
-    @IBOutlet weak var loginWithGoogleBtn: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginWithEmailButton: UIButton!
+    @IBOutlet weak var loginWithGoogleButton: UIButton!
     private let loginManager = LoginManager()
     private let alertManager = AlertManager()
     private let formValidator = FormValidator()
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         validateLogin()
-        requiredFields = [emailTf, passwordTf]
+        requiredFields = [emailTextField, passwordTextField]
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
@@ -45,10 +45,10 @@ class LoginViewController: UIViewController {
     @IBAction func loginWithEmail(_ sender: Any) {
         if (!formValidator.validateRequired(textFields: requiredFields)) {
             openAlertAction(modal: alertManager.getModalAlert(modalType: .notCompleteForm), completion: nil)
-        } else if (!formValidator.validateEmail(emailTf.text!)){
+        } else if (!formValidator.validateEmail(emailTextField.text!)){
             openAlertAction(modal: alertManager.getModalAlert(modalType: .invalidEmail), completion: nil)
         } else {
-            loginManager.login(withEmail: emailTf.text!, password: passwordTf.text!, completion: {
+            loginManager.login(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {
                 self.performSegue(withIdentifier: self.loginSegue, sender: nil)
             }, errorHandler: { error in
                 let errorInformation = Modal(message: error, closeLabel: "Accept")

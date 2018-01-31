@@ -11,13 +11,13 @@ import Kingfisher
 
 class MoviewReviewCell: UITableViewCell {
     
-    @IBOutlet weak var thumbnailImg: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var reviewTxt: UITextView!
+    @IBOutlet weak var thumbnailImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var reviewTextView: UITextView!
         
     func loadReviewPreview(movieReview: MovieReview){
-        titleLbl.text = movieReview.displayTitle
-        reviewTxt.text = movieReview.summaryShort
+        titleLabel.text = movieReview.displayTitle
+        reviewTextView.text = movieReview.summaryShort
         
         guard let thumbnailUrl = movieReview.thumbnail else {
             return
@@ -26,7 +26,7 @@ class MoviewReviewCell: UITableViewCell {
         guard let url = URL(string: thumbnailUrl) else {
             return
         }
-        thumbnailImg.kf.setImage(with: url)
+        thumbnailImage.kf.setImage(with: url)
     }
 
 }
