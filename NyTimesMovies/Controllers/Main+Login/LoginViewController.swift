@@ -43,12 +43,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithEmail(_ sender: Any) {
-        if (!formValidator.validateRequired(textFields: requiredFields)) {
+        if (formValidator.isAnyFieldEmpty(textFields: requiredFields)) {
             openAlertAction(modal: alertManager.getModalAlert(modalType: .notCompleteForm), completion: nil)
-        } else if (!emailTextField.text!.isValidEmail()){
-            openAlertAction(modal: alertManager.getModalAlert(modalType: .invalidEmail), completion: nil)
         } else {
-            loginManager.login(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {
+            guard let emailString = emailTextField.text, !emailString.isValidEmail() else {
+                openAlertAction(modal: alertManager.getModalAlert(modalType: .invalidEmail), completion: nil)
+                return
+            }
+            loginManager.login(withEmail: emailString, password: passwordTextField.text!, completion: {
                 self.performSegue(withIdentifier: self.loginSegue, sender: nil)
             }, errorHandler: { error in
                 let errorInformation = Modal(message: error, closeLabel: "Accept")
