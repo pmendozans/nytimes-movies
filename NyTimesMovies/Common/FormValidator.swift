@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 struct FormValidator {
-    func validateRequired(textFields: [UITextField]) -> Bool{
+    func isAnyFieldEmpty(textFields: [UITextField]) -> Bool{
         for textField in textFields {
             if (textField.text?.isEmpty)! {
-                return false
+                return true
             }
         }
-        return true
+        return false
     }
 }

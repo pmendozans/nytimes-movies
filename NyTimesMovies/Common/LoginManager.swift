@@ -11,10 +11,10 @@ import Foundation
 import GoogleSignIn
 import SwiftyUserDefaults
 
-typealias CompletionHandler = (() -> Void )?
-typealias ErrorHandler = ((String) -> Void )?
-
 struct LoginManager {
+    
+    typealias CompletionHandler = (() -> Void )?
+    typealias ErrorHandler = ((String) -> Void )?
     
     func login(withEmail email: String, password: String, completion: CompletionHandler, errorHandler: ErrorHandler){
         if email == "test@nearsoft.com" && password == "demo" {
