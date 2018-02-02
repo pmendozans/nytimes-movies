@@ -19,9 +19,9 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var summaryTextView: UITextView!
     @IBOutlet weak var thumbImage: UIImageView!
     
-    
     var movieReviewDetails: MovieReview!
-    private let thumbsUpImageName = "thumbs-up"
+    let dateFormat = "MMM d, yyyy"
+    
     private let dateManager = DateManager()
 
     override func viewDidLoad() {
@@ -34,10 +34,14 @@ class MovieDetailsViewController: UIViewController {
         ratingLabel.text = movieReviewDetails.mppaRating
         directorLabel.text = movieReviewDetails.byline
         summaryTextView.text = movieReviewDetails.summaryShort
-        publicationDateLabel.text = dateManager.readableDate(fromString: movieReviewDetails.publicationDate)
-        openingDateLabel.text = dateManager.readableDate(fromString: movieReviewDetails.openingDate)
+        if let publicationDate = movieReviewDetails.publicationDate{
+            publicationDateLabel.text = publicationDate.formatToReadableString(format: dateFormat)
+        }
+        if let openingDate = movieReviewDetails.openingDate{
+            openingDateLabel.text = openingDate.formatToReadableString(format: dateFormat)
+        }
         if (movieReviewDetails.criticsPick) {
-            thumbImage.image = UIImage(named: thumbsUpImageName)
+            thumbImage.image = #imageLiteral(resourceName: "thumbs-up")
         }
     }
 }
