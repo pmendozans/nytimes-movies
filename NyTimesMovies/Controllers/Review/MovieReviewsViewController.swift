@@ -20,20 +20,26 @@ class MovieReviewsViewController: UIViewController {
     private let reviewViewModel = ReviewViewModel()
     private let alertManager = AlertManager()
     private let reviewListToDetails = "reviewListToDetails"
-    private var currentPage = 0
+    private var lastLoadedListOffset = 0
     private var hasLoadedAllReviews = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        loadMovieReviewsFromApi()
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         let nib = UINib(nibName: cellNibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
-        loadMovieReviewsFromApi()
     }
     
     func loadMovieReviewsFromApi(){
         activityIndicator.startAnimating()
-        reviewViewModel.getMovieReviews(offset: currentPage, completion: { movieReviews in
-            self.currentPage += 1
+        reviewViewModel.getMovieReviews(offset: lastLoadedListOffset, completion: { movieReviews in
+            self.lastLoadedListOffset += 1
             if(movieReviews.count == 0){
                 self.hasLoadedAllReviews = true
             }
@@ -56,21 +62,11 @@ class MovieReviewsViewController: UIViewController {
     }
 }
 
-extension MovieReviewsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieReviewsList.count
-    }
+// MARK: - UITableViewDelegate
+extension MovieReviewsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reviewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MoviewReviewCell
-        let reviewToLoad = movieReviewsList[indexPath.row]
-        reviewCell.selectionStyle = .none
-        reviewCell.loadReviewPreview(movieReview: reviewToLoad)
-        return reviewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -78,10 +74,29 @@ extension MovieReviewsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == movieReviewsList.count-2 {
-            if (!hasLoadedAllReviews) {
-                loadMovieReviewsFromApi()
-            }
+
+        if hasLoadedAllReviews {
+            return
         }
+
+        if indexPath.row == movieReviewsList.count-2 {
+            loadMovieReviewsFromApi()
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension MovieReviewsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movieReviewsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reviewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MoviewReviewCell
+        let reviewToLoad = movieReviewsList[indexPath.row]
+        reviewCell.selectionStyle = .none
+        reviewCell.loadReviewPreview(movieReview: reviewToLoad)
+        return reviewCell
     }
 }
