@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,15 +24,15 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="334.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ny-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Zy-3L-eTv">
-                                        <rect key="frame" x="114" y="79" width="146" height="177"/>
+                                        <rect key="frame" x="119.5" y="83.5" width="136" height="168"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="177" id="5Ty-PD-64v"/>
-                                            <constraint firstAttribute="width" constant="146" id="5hM-6s-eeG"/>
+                                            <constraint firstAttribute="width" secondItem="7Zy-3L-eTv" secondAttribute="height" multiplier="137:169" id="7JO-K3-buq"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="7Zy-3L-eTv" firstAttribute="height" secondItem="RJj-EP-4rJ" secondAttribute="height" multiplier="0.5" constant="1" id="A7D-Ts-LQC"/>
                                     <constraint firstItem="7Zy-3L-eTv" firstAttribute="centerY" secondItem="RJj-EP-4rJ" secondAttribute="centerY" id="HqU-ts-7bO"/>
                                     <constraint firstItem="7Zy-3L-eTv" firstAttribute="centerX" secondItem="RJj-EP-4rJ" secondAttribute="centerX" id="idf-dL-fNS"/>
                                 </constraints>
