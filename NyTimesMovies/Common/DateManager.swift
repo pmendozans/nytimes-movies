@@ -8,16 +8,20 @@
 
 import Foundation
 
-struct DateManager {
-    func readableDate(fromString dateString: String) -> String {
+class DateManager {
+    func transformStringToDate(fromString dateString: String, inputFormat: String) -> Date? {
         let formater = DateFormatter()
-        formater.dateFormat = "yyyy-MM-dd"
-        let date = formater.date(from: dateString)
+        formater.dateFormat = inputFormat
+        if let date = formater.date(from: dateString){
+            return date
+        }
+        return nil
+        /*
         let readableFormater = DateFormatter()
         readableFormater.dateFormat = "MMM d, yyyy"
         if let date = date {
             return readableFormater.string(from: date)
         }
-        return "unknown"
+        return nil*/
     }
 }
